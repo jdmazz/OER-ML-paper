@@ -4,15 +4,10 @@ This project uses machine learning (ML) to explore the relationships between qua
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage](#usage)
-- [Example](#example)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Installation
-
 To install the necessary packages, use pip:
 
-##
-
+## License
 MIT license
