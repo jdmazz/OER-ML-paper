@@ -8,8 +8,8 @@ This project uses machine learning (ML) to explore the relationships between qua
 
 ## Installation
 To install the necessary packages, use pip:
-pandas
-matplotlib
+- pandas
+- matplotlib
 
 
 ## License
