@@ -4,6 +4,7 @@ This project uses machine learning (ML) to explore the relationships between qua
 
 ## Table of Contents
 - [Installation](#installation)
+- [Usage](#Usage)
 - [License](#license)
 
 ## Installation
@@ -11,6 +12,8 @@ To install the necessary packages, use pip:
 - pandas
 - matplotlib
 
+## Usage
+-preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
 
 ## License
 MIT license
