@@ -13,7 +13,7 @@ To install the necessary packages, use pip:
 - matplotlib
 
 ## Usage
--preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
+- preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
 
 ## License
 MIT license
