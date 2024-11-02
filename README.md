@@ -11,9 +11,12 @@ This project uses machine learning (ML) to explore the relationships between qua
 To install the necessary packages, use pip:
 - pandas
 - matplotlib
+- scikit-learn
+- seaborn
 
 ## Usage
 - preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
+- ml_tafel.ipynb contains the {Ir,Pt,Au,Pd} features and Tafel slope ML code.
 
 ## License
 MIT license
