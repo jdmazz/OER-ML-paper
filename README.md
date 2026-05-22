@@ -15,6 +15,8 @@ conda activate oer_research
 ## Usage
 - preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
 - ml_tafel.ipynb contains the {Ir,Pt,Au,Pd} features and Tafel slope ML code.
+- dJdVpreprocess.ipynb contains the djdV plot generation and mathematical modeling from the raw CV data.
+- ml_djdv.ipynb contains the ML tests performed upon djdV plots and models.
 
 ## License
 MIT license
