@@ -8,12 +8,9 @@ This project uses machine learning (ML) to explore the relationships between qua
 - [License](#license)
 
 ## Installation
-To install the necessary packages, use pip:
-- pandas
-- matplotlib
-- scikit-learn
-- seaborn
-- shap
+To install the necessary packages, use the .yml file:
+conda env create -f environment.yml
+conda activate oer_research
 
 ## Usage
 - preprocessing.ipynb contains the Tafel plot generation from the raw CV data.
