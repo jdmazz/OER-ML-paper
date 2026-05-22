@@ -9,7 +9,7 @@ This project uses machine learning (ML) to explore the relationships between qua
 
 ## Installation
 To install the necessary packages, use the .yml file:
-conda env create -f environment.yml
+conda env create -f oer_research.yml
 conda activate oer_research
 
 ## Usage

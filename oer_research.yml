@@ -172,4 +172,3 @@ dependencies:
       - threadpoolctl==3.5.0
       - tqdm==4.66.4
       - tzdata==2024.1
-prefix: /Users/jasonmazzaroth/anaconda3/envs/oer_research
