@@ -49,3 +49,7 @@ __MACOSX
 
 # Ignore the CV folder and its contents
 CV/
+
+# PyCharm
+*.xml
+*.iml
