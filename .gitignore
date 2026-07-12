@@ -47,8 +47,9 @@ dmypy.json
 .DS_Store
 __MACOSX
 
-# Ignore the CV folder and its contents
-CV/
+# Ignore the extracted CV folder and its contents
+data/CV/
+data/dJdV
 
 # PyCharm
 *.xml
