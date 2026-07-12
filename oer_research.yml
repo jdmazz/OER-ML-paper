@@ -18,6 +18,7 @@ dependencies:
   - matplotlib=3.9.*
   - seaborn=0.13.*
   - shap=0.45.*
+  - openpyxl=3.1.*      # pandas engine for reading .xlsx (data/external/)
 
   # ── Notebook runtime ──────────────────────────────────────
   - jupyterlab
