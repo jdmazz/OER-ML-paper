@@ -17,20 +17,28 @@ the 5th forward scan is used for analysis to ensure steady-state conditions.
 
 ```
 .
-├── CV.zip                   Raw CV data files (one .csv per sample)
-├── dJdV/                    Preprocessed dJ/dV curves (output of preprocessing.ipynb)
-├── djdVgraphs/              Per-sample dJ/dV fit plots (output of dJdVpreprocess.ipynb)
-├── PtPdAuIr_summary.csv     Composition and iR-drop lookup table
-├── composition_Tafel.csv    Composition + Tafel slope (output of preprocessing.ipynb)
-├── composition_eta.csv      Composition + η₁₀ (output of preprocessing.ipynb)
-├── composition_djdV.csv     Composition + dJ/dV fit params (output of dJdVpreprocess.ipynb)
-├── preprocessing.ipynb      ① Tafel slope + η₁₀ extraction from raw CV
-├── dJdVpreprocess.ipynb     ② dJ/dV curve fitting (logistic + Gaussian model)
-├── ml_tafel.ipynb           ③ ML: predict Tafel slope from composition
-├── eta_prediction.ipynb     ④ ML: predict η₁₀ from composition
-├── ml_djdv.ipynb            ⑤ ML: predict dJ/dV parameters from composition
-└── oer_research.yml         Conda environment specification
+├── data/
+│   ├── CV.zip                Raw CV data (one .csv per sample); unzipped to data/CV/ on first run
+│   ├── PtPdAuIr_summary.csv  Composition and iR-drop lookup table
+│   ├── dJdV/                 Preprocessed dJ/dV curves (output of preprocessing.ipynb)
+│   ├── composition_Tafel.csv Composition + Tafel slope (output of preprocessing.ipynb)
+│   ├── composition_eta.csv   Composition + η₁₀ (output of preprocessing.ipynb)
+│   ├── composition_djdV.csv  Composition + dJ/dV fit params (output of dJdVpreprocess.ipynb)
+│   └── external/             Corrosion-analysis data
+├── images/                   All generated figures
+│   └── djdVgraphs/           Per-sample dJ/dV fit plots (output of dJdVpreprocess.ipynb)
+├── oer_utils.py              Shared data-loading and composition-matching helpers
+├── djdv_model.py             Shared dJ/dV curve model (sigmoid + Gaussian)
+├── preprocessing.ipynb       ① Tafel slope + η₁₀ extraction from raw CV
+├── dJdVpreprocess.ipynb      ② dJ/dV curve fitting (logistic + Gaussian model)
+├── ml_tafel.ipynb            ③ ML: predict Tafel slope from composition
+├── eta_prediction.ipynb      ④ ML: predict η₁₀ from composition
+├── ml_djdv.ipynb             ⑤ ML: predict dJ/dV parameters from composition
+└── oer_research.yml          Conda environment specification
 ```
+
+The notebooks import `oer_utils` and `djdv_model`, so launch Jupyter from the
+repository root (where those files live) rather than from a subdirectory.
 
 ## Installation
 
@@ -39,7 +47,8 @@ conda env create -f oer_research.yml
 conda activate oer_research
 ```
 
-Python 3.12 is required.  All dependencies are pinned in the `.yml` file.
+Python 3.12 is required.  The `.yml` file lists the direct dependencies and
+resolves the rest through conda-forge.
 
 ## Usage
 
@@ -47,11 +56,11 @@ Run the notebooks in order; each one produces output files consumed by the next.
 
 | # | Notebook | Inputs | Outputs |
 |---|----------|--------|---------|
-| ① | `preprocessing.ipynb` | `CV.zip`, `PtPdAuIr_summary.csv` | `composition_Tafel.csv`, `composition_eta.csv`, `dJdV/` |
-| ② | `dJdVpreprocess.ipynb` | `dJdV/`, `PtPdAuIr_summary.csv` | `composition_djdV.csv`, `djdVgraphs/` |
-| ③ | `ml_tafel.ipynb` | `composition_Tafel.csv` | `feature_importance.png`, `shap_dependence_plot_Ir.png` |
-| ④ | `eta_prediction.ipynb` | `composition_eta.csv` | `parity_plots.png`, `feature_importance_eta.png` |
-| ⑤ | `ml_djdv.ipynb` | `composition_djdV.csv` | `quaternary_*.pdf` |
+| ① | `preprocessing.ipynb` | `data/CV.zip`, `data/PtPdAuIr_summary.csv` | `data/composition_Tafel.csv`, `data/composition_eta.csv`, `data/dJdV/`, `images/tafel_plot_ex.png` |
+| ② | `dJdVpreprocess.ipynb` | `data/dJdV/`, `data/PtPdAuIr_summary.csv` | `data/composition_djdV.csv`, `images/djdVgraphs/` |
+| ③ | `ml_tafel.ipynb` | `data/composition_Tafel.csv` | `images/feature_importance.png`, `images/shap_dependence_plot_Ir.png` |
+| ④ | `eta_prediction.ipynb` | `data/composition_eta.csv` | `images/parity_plots.png`, `images/feature_importance_eta.png` |
+| ⑤ | `ml_djdv.ipynb` | `data/composition_djdV.csv` | `images/quaternary_*.pdf` |
 
 ### Electrochemical conventions
 
