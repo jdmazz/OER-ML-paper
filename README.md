@@ -66,8 +66,8 @@ Run the notebooks in order; each one produces output files consumed by the next.
 
 - **iR correction**: applied voltage is corrected as V_corr = V_meas − I·R, where R
   is the measured electrolyte resistance.
-- **Overpotential**: η = V_corr − V_eq, with V_eq = 1.2891 V vs RHE (OER equilibrium
-  potential in 0.1 M H₂SO₄, from the Nernst equation).
+- **Overpotential**: η = V_corr − V_eq, with V_eq = 1.23 V vs RHE (standard OER
+  equilibrium potential at 25 °C; on the RHE scale this value is pH-independent).
 - **Tafel slope**: linear fit of η vs log₁₀(J) in the kinetically controlled region
   (−5 ≤ log₁₀(J) ≤ −2), reported in V/decade.
 - **η₁₀**: overpotential interpolated at J = 10 mA/cm², the standard benchmarking
