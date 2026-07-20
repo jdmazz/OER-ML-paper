@@ -40,12 +40,17 @@ def load_catalyst_summary(summary_csv):
 
 
 def list_data_files(directory):
-    """Return the plain files inside ``directory`` (skips subfolders)."""
-    return [
+    """Return the plain files inside ``directory`` (skips subfolders).
+
+    Sorted so that output row order — and therefore anything seeded
+    downstream of it, like train/test splits — is reproducible across
+    machines instead of inheriting the filesystem's listing order.
+    """
+    return sorted(
         f
         for f in os.listdir(directory)
         if os.path.isfile(os.path.join(directory, f))
-    ]
+    )
 
 
 def match_composition(catalyst_df, filename):
