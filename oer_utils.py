@@ -2,8 +2,7 @@
 
 Both ``preprocessing.ipynb`` and ``dJdVpreprocess.ipynb`` load the same
 composition lookup table, list the same kind of per-sample data files, and
-match a data filename back to its composition row. Those steps live here so
-they are written once.
+match a data filename back to its composition row.
 """
 
 import os
@@ -17,7 +16,7 @@ COMPOSITION_COLS = (6, 7, 8, 9)
 def load_catalyst_summary(summary_csv):
     """Load and clean the Pt/Pd/Au/Ir composition lookup table.
 
-    Normalises the ``Run #`` key, gives the atomic-percent columns short
+    Normalizes the ``Run #`` key, gives the atomic-percent columns short
     names, and fills missing electrolyte resistances with the column mean.
     """
     df = pd.read_csv(summary_csv)

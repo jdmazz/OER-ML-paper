@@ -1,7 +1,6 @@
 """dJ/dV curve model.
 
 Shared by ``dJdVpreprocess.ipynb`` (fitting) and ``ml_djdv.ipynb``
-(reconstruction), so the sigmoid-plus-Gaussian form lives in one place.
 """
 
 import numpy as np
